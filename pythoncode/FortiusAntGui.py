@@ -165,7 +165,7 @@ class frmFortiusAntGui(wx.Frame):
         # Create frame and panel for TAB-handling
         # (First versions did not use panel, and that's why TABs did not work)
         # ----------------------------------------------------------------------
-        wx.Frame.__init__(self, parent, -1, githubWindowTitle(), \
+        wx.Frame.__init__(self, parent, -1, githubWindowTitle(),
                           style=wx.DEFAULT_FRAME_STYLE & ~(wx.RESIZE_BORDER | wx.MAXIMIZE_BOX))
         if True:
             self.panel = wx.Panel(self)  # Controls on panel for TAB-handling
@@ -223,8 +223,8 @@ class frmFortiusAntGui(wx.Frame):
         # Load Background image
         # ----------------------------------------------------------------------
         self.BackgroundBitmap = False
-        BitmapW = 900
-        BitmapH = 600
+        BitmapW = 800
+        BitmapH = 480
         try:
             self.BackgroundBitmap = wx.Bitmap(FortiusAnt_jpg)  # Image on the window background
             BitmapW = self.BackgroundBitmap.Size.GetWidth()

@@ -92,8 +92,8 @@ rm $USBRULES
 # ----------------------------------------------------------
 echo Create group usbtacx
 sudo addgroup usbtacx
-echo add user pi to this group
-sudo adduser pi usbtacx
+echo add user ss to this group
+sudo adduser ss usbtacx
 
 # ----------------------------------------------------- Done
 Raspberry='\033[0;35m'

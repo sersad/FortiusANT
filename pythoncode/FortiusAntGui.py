@@ -223,8 +223,8 @@ class frmFortiusAntGui(wx.Frame):
         # Load Background image
         # ----------------------------------------------------------------------
         self.BackgroundBitmap = False
-        BitmapW = 800
-        BitmapH = 480
+        BitmapW = 900
+        BitmapH = 600
         try:
             self.BackgroundBitmap = wx.Bitmap(FortiusAnt_jpg)  # Image on the window background
             BitmapW = self.BackgroundBitmap.Size.GetWidth()

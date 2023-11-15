@@ -343,8 +343,8 @@ class frmFortiusAntGui(wx.Frame):
         # ----------------------------------------------------------------------
         # Speedometer values and colours
         # ----------------------------------------------------------------------
-        MiddleTextFontSize = 10
-        TicksFontSize = 10
+        MiddleTextFontSize = 9
+        TicksFontSize = 9
 
         # ----------------------------------------------------------------------
         # self.Speedometer
@@ -518,12 +518,12 @@ class frmFortiusAntGui(wx.Frame):
         # ----------------------------------------------------------------------
         # Font sizing for all measurements
         # ----------------------------------------------------------------------
-        TextCtrlFont = wx.Font(24, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
-        TextCtrlH = 40
+        TextCtrlFont = wx.Font(22, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
+        TextCtrlH = 38
         TextCtrlW = int(SpeedWH / 2)
 
-        TextCtrlFont2 = wx.Font(12, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
-        TextCtrlH2 = 25
+        TextCtrlFont2 = wx.Font(10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
+        TextCtrlH2 = 24
         _TextCtrlW2 = int(SpeedWH / 2)
 
         # ----------------------------------------------------------------------
@@ -568,28 +568,28 @@ class frmFortiusAntGui(wx.Frame):
         # - Is positioned UNDER the Speed control
         # - Has width of Speed + Cadence control
         # ----------------------------------------------------------------------
-        self.txtUsbTrainer = wx.TextCtrl(self.panel, value="txtUsbTrainer", size=(10, TextCtrlH2),
+        self.txtUsbTrainer = wx.TextCtrl(self.panel, value="txtUsbTrainer", size=(9, TextCtrlH2),
                                          style=wx.TE_LEFT | wx.TE_READONLY)
         self.txtUsbTrainer.SetSize((self.Revs.Position[0] + self.Revs.Size[0] - Margin, -1))
-        self.txtUsbTrainer.SetPosition((Margin, self.Speed.Position[1] + self.Speed.Size[1] + 5))
+        self.txtUsbTrainer.SetPosition((Margin, self.Speed.Position[1] + self.Speed.Size[1] + 4))
         self.txtUsbTrainer.SetBackgroundColour(bg)
 
         # ----------------------------------------------------------------------
         # ANT Dongle
         # ----------------------------------------------------------------------
-        self.txtAntDongle = wx.TextCtrl(self.panel, value="txtAntDongle", size=(10, TextCtrlH2),
+        self.txtAntDongle = wx.TextCtrl(self.panel, value="txtAntDongle", size=(9, TextCtrlH2),
                                         style=wx.TE_LEFT | wx.TE_READONLY)
         self.txtAntDongle.SetSize((self.txtUsbTrainer.Size[0], -1))
-        self.txtAntDongle.SetPosition((Margin, self.txtUsbTrainer.Position[1] + self.txtUsbTrainer.Size[1] + 5))
+        self.txtAntDongle.SetPosition((Margin, self.txtUsbTrainer.Position[1] + self.txtUsbTrainer.Size[1] + 4))
         self.txtAntDongle.SetBackgroundColour(bg)
 
         # ----------------------------------------------------------------------
         # ANT Heart Rate Monitor
         # ----------------------------------------------------------------------
-        self.txtAntHRM = wx.TextCtrl(self.panel, value="txtAntHRM", size=(10, TextCtrlH2),
+        self.txtAntHRM = wx.TextCtrl(self.panel, value="txtAntHRM", size=(9, TextCtrlH2),
                                      style=wx.TE_LEFT | wx.TE_READONLY)
         self.txtAntHRM.SetSize((self.txtUsbTrainer.Size[0], -1))
-        self.txtAntHRM.SetPosition((Margin, self.txtAntDongle.Position[1] + self.txtAntDongle.Size[1] + 5))
+        self.txtAntHRM.SetPosition((Margin, self.txtAntDongle.Position[1] + self.txtAntDongle.Size[1] + 4))
         self.txtAntHRM.SetBackgroundColour(bg)
 
         # ----------------------------------------------------------------------
@@ -666,7 +666,7 @@ class frmFortiusAntGui(wx.Frame):
         # Buttons
         # ----------------------------------------------------------------------
         b = wx.Image(settings_bmp)
-        b.Rescale(16, 16)
+        b.Rescale(14, 14)
         b = wx.Bitmap(b)
 
         self.btnSettings = wx.BitmapButton(self.panel, bitmap=b, size=(ButtonW, -1), style=0)  # wx.NO_BORDER)

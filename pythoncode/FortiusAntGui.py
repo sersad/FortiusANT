@@ -125,7 +125,7 @@ LargeTexts = True  # 2020-02-07
 
 bg = wx.Colour(220, 220, 220)  # Background colour [for self.Speedometers]
 colorTacxFortius = wx.Colour(120, 148, 227)
-Margin = 2
+Margin = 4
 
 FixedForDocu = False
 
@@ -189,7 +189,7 @@ class frmFortiusAntGui(wx.Frame):
         FortiusAnt_jpg = os.path.join(dirname, "FortiusAnt.jpg")
         Heart_jpg = os.path.join(dirname, "heart.jpg")
         settings_bmp = os.path.join(dirname, "settings.bmp")
-        sponsor_bmp = os.path.join(dirname, "sponsor.bmp")
+        # sponsor_bmp = os.path.join(dirname, "sponsor.bmp")
 
         try:
             ico = wx.Icon(FortiusAnt_ico, wx.BITMAP_TYPE_ICO)
@@ -234,11 +234,11 @@ class frmFortiusAntGui(wx.Frame):
         # ----------------------------------------------------------------------
         # Load HeartRate image
         # ----------------------------------------------------------------------
-        self.HeartRate = 123
-        self.HeartRateWH = 30
+        self.HeartRate = 100
+        self.HeartRateWH = 50
         # 2020-04-07    # 2020-02-07    # 2020-01-25
         self.HeartRateX = Margin  # 25            # BitmapW - 25 - self.HeartRateWH
-        self.HeartRateY = BitmapH - 40 - self.HeartRateWH
+        self.HeartRateY = BitmapH - 70 - self.HeartRateWH
         self.HeartRateImage = True
         try:
             self.HeartRateImage = wx.Image(Heart_jpg)  # HeartRate
@@ -320,7 +320,7 @@ class frmFortiusAntGui(wx.Frame):
         # x [button] x [speed] x [revs] x [power] x
         #
         ButtonX = Margin
-        ButtonW = 75  # 2021-03-02 changed from 80 --> 85 for Raspberry
+        ButtonW = 85  # 2021-03-02 changed from 80 --> 85 for Raspberry
 
         SpeedWH = int((BitmapW - ButtonW - 5 * Margin) / 3)  # width/height equal (square)
         RevsWH = SpeedWH
@@ -519,11 +519,11 @@ class frmFortiusAntGui(wx.Frame):
         # Font sizing for all measurements
         # ----------------------------------------------------------------------
         TextCtrlFont = wx.Font(22, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
-        TextCtrlH = 38
+        TextCtrlH = 36
         TextCtrlW = int(SpeedWH / 2)
 
         TextCtrlFont2 = wx.Font(10, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD)
-        TextCtrlH2 = 24
+        TextCtrlH2 = 22
         _TextCtrlW2 = int(SpeedWH / 2)
 
         # ----------------------------------------------------------------------
@@ -710,7 +710,7 @@ class frmFortiusAntGui(wx.Frame):
         self.Bind(wx.EVT_BUTTON, self.OnClick_btnHelp, self.btnHelp)
 
         # Move Help button above the texts
-        self.btnHelp.SetPosition((ButtonX, self.txtUsbTrainer.Position[1] - Margin))
+        self.btnHelp.SetPosition((ButtonX, self.txtUsbTrainer.Position[1] * 3 - Margin))
         # Move Sponsor button above Help
         # self.btnSponsor.SetPosition((ButtonX, self.btnHelp.Position[1] - self.btnHelp.Size[1] - Margin))
 

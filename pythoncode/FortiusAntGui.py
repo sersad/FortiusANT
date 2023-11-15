@@ -234,11 +234,11 @@ class frmFortiusAntGui(wx.Frame):
         # ----------------------------------------------------------------------
         # Load HeartRate image
         # ----------------------------------------------------------------------
-        self.HeartRate = 100
-        self.HeartRateWH = 50
+        self.HeartRate = 123
+        self.HeartRateWH = 30
         # 2020-04-07    # 2020-02-07    # 2020-01-25
         self.HeartRateX = Margin  # 25            # BitmapW - 25 - self.HeartRateWH
-        self.HeartRateY = BitmapH - 70 - self.HeartRateWH
+        self.HeartRateY = BitmapH - 140 - self.HeartRateWH
         self.HeartRateImage = True
         try:
             self.HeartRateImage = wx.Image(Heart_jpg)  # HeartRate

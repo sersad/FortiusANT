@@ -125,7 +125,7 @@ LargeTexts = True  # 2020-02-07
 
 bg = wx.Colour(220, 220, 220)  # Background colour [for self.Speedometers]
 colorTacxFortius = wx.Colour(120, 148, 227)
-Margin = 4
+Margin = 2
 
 FixedForDocu = False
 
@@ -320,7 +320,7 @@ class frmFortiusAntGui(wx.Frame):
         # x [button] x [speed] x [revs] x [power] x
         #
         ButtonX = Margin
-        ButtonW = 85  # 2021-03-02 changed from 80 --> 85 for Raspberry
+        ButtonW = 75  # 2021-03-02 changed from 80 --> 85 for Raspberry
 
         SpeedWH = int((BitmapW - ButtonW - 5 * Margin) / 3)  # width/height equal (square)
         RevsWH = SpeedWH
@@ -571,7 +571,7 @@ class frmFortiusAntGui(wx.Frame):
         self.txtUsbTrainer = wx.TextCtrl(self.panel, value="txtUsbTrainer", size=(9, TextCtrlH2),
                                          style=wx.TE_LEFT | wx.TE_READONLY)
         self.txtUsbTrainer.SetSize((self.Revs.Position[0] + self.Revs.Size[0] - Margin, -1))
-        self.txtUsbTrainer.SetPosition((Margin, self.Speed.Position[1] + self.Speed.Size[1] + 4))
+        self.txtUsbTrainer.SetPosition((Margin, self.Speed.Position[1] + self.Speed.Size[1] + 2))
         self.txtUsbTrainer.SetBackgroundColour(bg)
 
         # ----------------------------------------------------------------------
@@ -580,7 +580,7 @@ class frmFortiusAntGui(wx.Frame):
         self.txtAntDongle = wx.TextCtrl(self.panel, value="txtAntDongle", size=(9, TextCtrlH2),
                                         style=wx.TE_LEFT | wx.TE_READONLY)
         self.txtAntDongle.SetSize((self.txtUsbTrainer.Size[0], -1))
-        self.txtAntDongle.SetPosition((Margin, self.txtUsbTrainer.Position[1] + self.txtUsbTrainer.Size[1] + 4))
+        self.txtAntDongle.SetPosition((Margin, self.txtUsbTrainer.Position[1] + self.txtUsbTrainer.Size[1] + 2))
         self.txtAntDongle.SetBackgroundColour(bg)
 
         # ----------------------------------------------------------------------
@@ -589,7 +589,7 @@ class frmFortiusAntGui(wx.Frame):
         self.txtAntHRM = wx.TextCtrl(self.panel, value="txtAntHRM", size=(9, TextCtrlH2),
                                      style=wx.TE_LEFT | wx.TE_READONLY)
         self.txtAntHRM.SetSize((self.txtUsbTrainer.Size[0], -1))
-        self.txtAntHRM.SetPosition((Margin, self.txtAntDongle.Position[1] + self.txtAntDongle.Size[1] + 4))
+        self.txtAntHRM.SetPosition((Margin, self.txtAntDongle.Position[1] + self.txtAntDongle.Size[1] + 2))
         self.txtAntHRM.SetBackgroundColour(bg)
 
         # ----------------------------------------------------------------------
@@ -597,7 +597,7 @@ class frmFortiusAntGui(wx.Frame):
         #        position under txtAntHRM (like RadarGraph below)
         # Then move Cranckset in the middle between Heartrate and Cassette
         # ----------------------------------------------------------------------
-        self.CrancksetY = self.txtAntHRM.Position[1] + self.txtAntHRM.Size[1] + 5
+        self.CrancksetY = self.txtAntHRM.Position[1] + self.txtAntHRM.Size[1] + 3
         self.CassetteY = int((self.HeartRateY + self.HeartRateWH + self.CrancksetY - TextCtrlH) / 2)
 
         # ----------------------------------------------------------------------
@@ -632,7 +632,7 @@ class frmFortiusAntGui(wx.Frame):
         # - Under txtAntHRM
         # ----------------------------------------------------------------------
         x = self.txtHeartRate.Position[0] + self.txtHeartRate.Size[0] + Margin
-        y = self.txtAntHRM.Position[1] + self.txtAntHRM.Size[1] + 5
+        y = self.txtAntHRM.Position[1] + self.txtAntHRM.Size[1] + 3
         wh = self.txtHeartRate.Position[1] + self.txtHeartRate.Size[1] - y
         if self.clv.PedalStrokeAnalysis:
             self.RadarGraph = RadarGraph.clsRadarGraph(self.panel, "Pedal stroke analysis", x, y, wh)

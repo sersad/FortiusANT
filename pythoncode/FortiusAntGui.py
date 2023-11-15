@@ -322,7 +322,7 @@ class frmFortiusAntGui(wx.Frame):
         ButtonX = Margin
         ButtonW = 85  # 2021-03-02 changed from 80 --> 85 for Raspberry
 
-        SpeedWH = int((BitmapW - ButtonW - 5 * Margin) / 3)  # width/height equal (square)
+        SpeedWH = int((BitmapW - ButtonW - 5 * Margin) / 3.2)  # width/height equal (square)
         RevsWH = SpeedWH
         PowerWH = SpeedWH
 
@@ -705,12 +705,12 @@ class frmFortiusAntGui(wx.Frame):
         # self.btnSponsor.SetToolTip("Become a sponsor for FortiusAnt")
         # self.Bind(wx.EVT_BUTTON, self.OnClick_btnSponsor, self.btnSponsor)
 
-        self.btnHelp = wx.Button(self.panel, label="Help", size=(ButtonW, -1))
-        self.btnHelp.SetToolTip("Open the manual on github")
-        self.Bind(wx.EVT_BUTTON, self.OnClick_btnHelp, self.btnHelp)
+        # self.btnHelp = wx.Button(self.panel, label="Help", size=(ButtonW, -1))
+        # self.btnHelp.SetToolTip("Open the manual on github")
+        # self.Bind(wx.EVT_BUTTON, self.OnClick_btnHelp, self.btnHelp)
 
         # Move Help button above the texts
-        self.btnHelp.SetPosition((ButtonX, self.txtUsbTrainer.Position[1] * 3 - Margin))
+        # self.btnHelp.SetPosition((ButtonX, self.txtUsbTrainer.Position[1] * 2 - Margin))
         # Move Sponsor button above Help
         # self.btnSponsor.SetPosition((ButtonX, self.btnHelp.Position[1] - self.btnHelp.Size[1] - Margin))
 
@@ -1545,9 +1545,9 @@ class frmFortiusAntGui(wx.Frame):
     #
     # Output:       None
     # --------------------------------------------------------------------------
-    def OnClick_btnHelp(self, event=False):
-        if __name__ == "__main__": print("OnClick_btnHelp()")
-        webbrowser.open_new_tab('https://github.com/WouterJD/FortiusANT/blob/master/doc/FortiusANTUserManual.pdf')
+    # def OnClick_btnHelp(self, event=False):
+    #     if __name__ == "__main__": print("OnClick_btnHelp()")
+    #     webbrowser.open_new_tab('https://github.com/WouterJD/FortiusANT/blob/master/doc/FortiusANTUserManual.pdf')
 
     # --------------------------------------------------------------------------
     # O n C l o s e

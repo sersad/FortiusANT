@@ -710,7 +710,7 @@ class frmFortiusAntGui(wx.Frame):
         self.Bind(wx.EVT_BUTTON, self.OnClick_btnHelp, self.btnHelp)
 
         # Move Help button above the texts
-        self.btnHelp.SetPosition((ButtonX, self.txtUsbTrainer.Position[1] - self.txtUsbTrainer.Size[1] - Margin))
+        self.btnHelp.SetPosition((ButtonX, self.txtUsbTrainer.Position[1] - Margin))
         # Move Sponsor button above Help
         # self.btnSponsor.SetPosition((ButtonX, self.btnHelp.Position[1] - self.btnHelp.Size[1] - Margin))
 

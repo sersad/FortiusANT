@@ -223,8 +223,8 @@ class frmFortiusAntGui(wx.Frame):
         # Load Background image
         # ----------------------------------------------------------------------
         self.BackgroundBitmap = False
-        BitmapW = 900
-        BitmapH = 600
+        BitmapW = 840
+        BitmapH = 520
         try:
             self.BackgroundBitmap = wx.Bitmap(FortiusAnt_jpg)  # Image on the window background
             BitmapW = self.BackgroundBitmap.Size.GetWidth()
@@ -235,18 +235,18 @@ class frmFortiusAntGui(wx.Frame):
         # Load HeartRate image
         # ----------------------------------------------------------------------
         self.HeartRate = 123
-        self.HeartRateWH = 40
+        self.HeartRateWH = 30
         # 2020-04-07    # 2020-02-07    # 2020-01-25
         self.HeartRateX = Margin  # 25            # BitmapW - 25 - self.HeartRateWH
-        self.HeartRateY = BitmapH - 50 - self.HeartRateWH
-        self.HeartRateImage = False
+        self.HeartRateY = BitmapH - 40 - self.HeartRateWH
+        self.HeartRateImage = True
         try:
             self.HeartRateImage = wx.Image(Heart_jpg)  # HeartRate
 
-            img = self.HeartRateImage.Scale(36, 36, wx.IMAGE_QUALITY_HIGH)
+            img = self.HeartRateImage.Scale(30, 30, wx.IMAGE_QUALITY_HIGH)
             self.bmp36x36 = wx.Bitmap(img)
 
-            img = self.HeartRateImage.Scale(40, 40, wx.IMAGE_QUALITY_HIGH)
+            img = self.HeartRateImage.Scale(34, 34, wx.IMAGE_QUALITY_HIGH)
             self.bmp40x40 = wx.Bitmap(img)
 
         except:
@@ -699,11 +699,11 @@ class frmFortiusAntGui(wx.Frame):
         self.btnStop.Disable()
         self.Bind(wx.EVT_BUTTON, self.OnClick_btnStop, self.btnStop)
 
-        b = wx.Image(sponsor_bmp)  # Must fit, no rescale
-        b = wx.Bitmap(b)
-        self.btnSponsor = wx.BitmapButton(self.panel, bitmap=b, size=(ButtonW, -1), style=0)  # wx.NO_BORDER)
-        self.btnSponsor.SetToolTip("Become a sponsor for FortiusAnt")
-        self.Bind(wx.EVT_BUTTON, self.OnClick_btnSponsor, self.btnSponsor)
+        # b = wx.Image(sponsor_bmp)  # Must fit, no rescale
+        # b = wx.Bitmap(b)
+        # self.btnSponsor = wx.BitmapButton(self.panel, bitmap=b, size=(ButtonW, -1), style=0)  # wx.NO_BORDER)
+        # self.btnSponsor.SetToolTip("Become a sponsor for FortiusAnt")
+        # self.Bind(wx.EVT_BUTTON, self.OnClick_btnSponsor, self.btnSponsor)
 
         self.btnHelp = wx.Button(self.panel, label="Help", size=(ButtonW, -1))
         self.btnHelp.SetToolTip("Open the manual on github")

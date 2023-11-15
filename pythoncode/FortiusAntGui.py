@@ -712,7 +712,7 @@ class frmFortiusAntGui(wx.Frame):
         # Move Help button above the texts
         self.btnHelp.SetPosition((ButtonX, self.txtUsbTrainer.Position[1] - self.txtUsbTrainer.Size[1] - Margin))
         # Move Sponsor button above Help
-        self.btnSponsor.SetPosition((ButtonX, self.btnHelp.Position[1] - self.btnHelp.Size[1] - Margin))
+        # self.btnSponsor.SetPosition((ButtonX, self.btnHelp.Position[1] - self.btnHelp.Size[1] - Margin))
 
         # ----------------------------------------------------------------------
         # Frame resizes based upon the created controles, se center here!
@@ -1532,9 +1532,9 @@ class frmFortiusAntGui(wx.Frame):
     #
     # Output:       None
     # --------------------------------------------------------------------------
-    def OnClick_btnSponsor(self, event=False):
-        if __name__ == "__main__": print("OnClick_btnSponsor()")
-        webbrowser.open_new_tab('https://github.com/sponsors/WouterJD')
+    # def OnClick_btnSponsor(self, event=False):
+    #     if __name__ == "__main__": print("OnClick_btnSponsor()")
+    #     webbrowser.open_new_tab('https://github.com/sponsors/WouterJD')
 
     # --------------------------------------------------------------------------
     # O n C l i c k _ b t n H e l p 

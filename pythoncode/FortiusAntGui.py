@@ -322,7 +322,7 @@ class frmFortiusAntGui(wx.Frame):
         ButtonX = Margin
         ButtonW = 85  # 2021-03-02 changed from 80 --> 85 for Raspberry
 
-        SpeedWH = int((BitmapW - ButtonW - 5 * Margin) / 3.2)  # width/height equal (square)
+        SpeedWH = int((BitmapW - ButtonW - 5 * Margin) / 3.4)  # width/height equal (square)
         RevsWH = SpeedWH
         PowerWH = SpeedWH
 

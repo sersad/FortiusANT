@@ -322,7 +322,7 @@ class frmFortiusAntGui(wx.Frame):
         ButtonX = Margin
         ButtonW = 85  # 2021-03-02 changed from 80 --> 85 for Raspberry
 
-        SpeedWH = int((BitmapW - ButtonW - 5 * Margin) / 3.4)  # width/height equal (square)
+        SpeedWH = int((BitmapW - ButtonW - 5 * Margin) / 3.3)  # width/height equal (square)
         RevsWH = SpeedWH
         PowerWH = SpeedWH
 
@@ -352,7 +352,7 @@ class frmFortiusAntGui(wx.Frame):
         if True:
             self.Speed = SM.SpeedMeter(self.panel,
                                        agwStyle=SM.SM_DRAW_HAND | SM.SM_DRAW_GRADIENT | SM.SM_DRAW_MIDDLE_TEXT | SM.SM_DRAW_SECONDARY_TICKS)
-            self.Speed.SetSize(SpeedX, SpeedY, SpeedWH, SpeedWH)
+            self.Speed.SetSize(SpeedX, SpeedY, SpeedWH, SpeedWH - 20)
             self.Speed.DisableFocusFromKeyboard()
 
             self.Speed.SetSpeedBackground(bg)
@@ -411,7 +411,7 @@ class frmFortiusAntGui(wx.Frame):
             # SM_DRAW_FANCY_TICKS       With this style you can use xml tags to create some custom text and draw it at the ticks position. See lib.fancytext for the tags.
             self.Revs = SM.SpeedMeter(self.panel,
                                       agwStyle=SM.SM_DRAW_GRADIENT | SM.SM_DRAW_PARTIAL_SECTORS | SM.SM_DRAW_HAND | SM.SM_DRAW_SECONDARY_TICKS | SM.SM_DRAW_MIDDLE_TEXT)
-            self.Revs.SetSize(RevsX, RevsY, RevsWH, RevsWH)  # x,y and width, height
+            self.Revs.SetSize(RevsX, RevsY, RevsWH, RevsWH - 20)  # x,y and width, height
             self.Revs.DisableFocusFromKeyboard()
 
             self.Revs.SetSpeedBackground(bg)
@@ -472,7 +472,7 @@ class frmFortiusAntGui(wx.Frame):
         if True:
             self.Power = SM.SpeedMeter(self.panel,
                                        agwStyle=SM.SM_DRAW_HAND | SM.SM_DRAW_GRADIENT | SM.SM_DRAW_MIDDLE_TEXT | SM.SM_DRAW_SECONDARY_TICKS)
-            self.Power.SetSize(PowerX, PowerY, PowerWH, PowerWH)  # x,y and width, height
+            self.Power.SetSize(PowerX, PowerY, PowerWH, PowerWH - 20)  # x,y and width, height
             self.Power.DisableFocusFromKeyboard()
 
             self.Power.SetSpeedBackground(bg)
